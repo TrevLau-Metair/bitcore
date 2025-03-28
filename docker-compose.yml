@@ -1,23 +1,28 @@
 version: '3'
 services:
-  database:
-    image: mongo:3.4-jessie
-    ports: 
-    - 27017:27017
-    volumes: 
-    - /data/db:/data/db
-    
+
   bitcore-node:
     build: .
-    image: bitcore-node
-    links:
-      - database
-    ports:
-      - 8100:8100
-      - 3000:3000
+    image: 797307727140.dkr.ecr.ap-southeast-1.amazonaws.com/devops-tools/ns-bitcore:v10.7.1       # Rename image
+    network_mode: "host"
     environment:
-      - DB_HOST=database
-    env_file: .env
+      - DB_HOST=localhost
+      - DB_NAME=bitcore-test
+      - BITCORE_CONFIG_PATH=/bitcore/bitcore-test.config.json
+    volumes:
+       -  /home/bitcore/bitcore-test.config.json:/bitcore/bitcore-test.config.json
+    depends_on:
+      - db
+    entrypoint: ["/bin/bash","-i","-c","cd /opt/bitcore/; npm run node"]
+
+  db:
+    image: mongo:4.2.0
+    volumes: 
+      - /bitcoredb/data:/data
+      - /bitcoredb/data/db:/data/db
+
+
+    network_mode: "host"    
 
 #insight:
   #image: insight

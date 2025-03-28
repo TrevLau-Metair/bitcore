@@ -211,6 +211,12 @@ addNetwork({
   bech32prefix: 'tltc',
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
+  networkMagic: 0xfdd2c8f1,                            // From here, line 214
+  port: 19335,
+  dnsSeeds: [
+    'testnet-seed.litecointools.com',
+    'seed-b.litecoin.loshan.co.uk'
+ ],                                                   // To here, line 219
   variants: [{
     name: 'testnet4',
     networkMagic: 0xfdd2c8f1,

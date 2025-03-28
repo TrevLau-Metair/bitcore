@@ -198,6 +198,11 @@ addNetwork({
   scripthash: 0xc4,
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
+  networkMagic: 0xfcc1b7dc,                            // From here, line 201
+  port: 44556,
+  dnsSeeds: [
+    'testseed.jrn.me.uk'
+  ],                                                   // To here, line 205
   variants: [{
     name: 'testnet3',
     networkMagic: 0xfcc1b7dc,

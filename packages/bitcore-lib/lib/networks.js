@@ -200,6 +200,14 @@ addNetwork({
   bech32prefix: 'tb',
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
+  networkMagic: 0x0b110907,                            // From here, line 203
+  port: 18333,
+  dnsSeeds: [
+    'testnet-seed.bitcoin.petertodd.org',
+    'testnet-seed.bluematt.me',
+    'testnet-seed.alexykot.me',
+    'testnet-seed.bitcoin.schildbach.de'
+  ],                                                   // To here, line 210
   variants: [{
     name: 'testnet3',
     networkMagic: 0x0b110907,

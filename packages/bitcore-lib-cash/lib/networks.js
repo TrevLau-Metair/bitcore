@@ -222,6 +222,9 @@ addNetwork({
   scripthash: 0xc4,
   xpubkey: 0x043587cf,
   xprivkey: 0x04358394,
+  networkMagic: 0xf4e5f3f4,                            // From here, line 225
+  port: 18333,
+  dnsSeeds: dnsSeeds,                                  // To here, line 227
   variants: [{
     name: 'testnet3',
     networkMagic: 0xf4e5f3f4,
